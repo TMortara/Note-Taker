@@ -8,10 +8,6 @@ notes.get('/', (req, res) =>
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)))
 );
 
-notes.get('/api/notes', (req, res) => {
-    return res.json(JSON.parse(fs.readFileSync('./db/db.json')))
-});
-
 notes.post('/', (req, res) => {
     // Deconstructing items in req.body
     const { title, text } = req.body;
@@ -20,25 +16,21 @@ notes.post('/', (req, res) => {
         const newNote = {
             title,
             text,
-            notes_id: uuidv4(),
+            id: uuidv4(),
         };
 
-    readAndAppend(newNote, './db/db.json');
-
-    const response = {
-        status: 'Note posted successfully!',
-        body: newNote,
-    };
-
-    res.json(response);
+    const notesData = readAndAppend(newNote, './db/db.json')
+    res.json(notesData)
     }
     else {
         res.json('Error posting new note')
     }
 })
 
-router.delete('/:id', (req, res) => {
-    // const deleteNote = 
+notes.delete('/:id', (req, res) => {
+    const { id } = req.params;
+
+    const deletedNote = notes.propfind()
 })
 
 module.exports = notes;
