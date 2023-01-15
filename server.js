@@ -1,19 +1,25 @@
 const express = require('express');
 const path = require('path');
+const api = require('./routes/index');
+
+const PORT = process.env.PORT || 3001;
 
 const app = express();
-//first checks if PORT is in an environment variable, if not run on 3301
-const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use('/api', api);
 
 //set public file to be static
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
+app.get('/', (req, res) => 
     res.sendFile(path.join(__dirname, 'public', 'index.html'))
-});
+);
+
+app.get('/notes', (req, res) => 
+    res.sendFile(paht.join(__dirname, '/public/notes.html'))
+);
 
 //runs the webserver
 app.listen(PORT, () =>
