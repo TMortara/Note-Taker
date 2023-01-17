@@ -1,17 +1,27 @@
 [
     {
-        "title": "Test Title",
-        "text": "Test text",
-        "id": 3
+        "title": "Complete Challenge 11",
+        "text": "Add delete for bonus points; \nUse GET routes; \nAdd fallback using *",
+        "id": "da73bac0-3e09-48ee-a431-3024c1081443"
     },
     {
-        "title": "Test Note 1",
-        "text": "The cat jumped over the moon to get a drink of milk.",
-        "id": "4a69da15-6de6-44bc-bad2-fbe03e101c28"
+        "title": "Do Weekly Algorithms",
+        "text": "Makes sure to complete at least three Algorithms each week",
+        "id": "49371714-9630-4922-a2d6-50cd759fed91"
     },
     {
-        "title": "Testing",
-        "text": "Testing the *",
-        "id": "93007fb0-691f-4682-bc2f-90407ff08911"
+        "title": "Talk to Career Services",
+        "text": "Complete and submit resume to Career services to take the next steps.",
+        "id": "cc01913e-b4a5-48f7-a6fb-29c699ce79c7"
+    },
+    {
+        "title": "Review notes",
+        "text": "Review class notes and any items that need clarification",
+        "id": "16f4be83-f15d-45a1-8e78-b11dfd826215"
+    },
+    {
+        "title": "Rinse your dishes",
+        "text": "Rinse your dishes before putting them in the sink",
+        "id": "d96b3c3e-0dec-4642-aea2-9854acc5a210"
     }
 ]
