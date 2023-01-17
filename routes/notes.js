@@ -1,3 +1,4 @@
+// Require dependecies
 const notes = require('express').Router();
 const { v4: uuidv4 } = require('uuid');
 const fs = require('fs');
@@ -8,6 +9,7 @@ notes.get('/', (req, res) =>
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)))
 );
 
+// POST route that creates new notes
 notes.post('/', (req, res) => {
     // Deconstructing items in req.body
     const { title, text } = req.body;
@@ -27,6 +29,7 @@ notes.post('/', (req, res) => {
     }
 })
 
+// Delete route used to delete notes
 notes.delete('/:id', (req, res) => {
     const id = req.params.id;
     let notes = fs.readFile('./db/db.json', 'utf8', (error, data) => {
@@ -45,41 +48,6 @@ notes.delete('/:id', (req, res) => {
            });
     });
 
-    // const noteToDelete = notesArray.some(notesArray => notesArray.id === req.params.id);
-    // console.log(noteToDelete);
-
-    // if (noteToDelete) {
-    //    notesArray = notesArray.filter(notesArray => notesArray.id !== req.params.id);
-    //    console.log(notesArray);
-    //    fs.writeFile('./db/db.json', JSON.stringify(notesArray, null, 4), (err) => {
-    //     if (!err) {
-    //         res.json({ 
-    //             message: `Note with id of ${req.params.id} was deleted successfully`,
-    //             notesArray: notesArray.filter(notesArray => notesArray !== req.params.id)
-    //         });
-    //     } 
-    //     else {
-    //         res.json(`Failed to delete note with id of ${req.params.id}`);
-    //     }
-    //    });
-    // // fs.writeFileSync('./db/db.json', JSON.stringify(notesArray, null, 4))
-    // //     res.json({ 
-    // //         message: `Note with id of ${req.params.id} was deleted successfully`,
-    // //         notesArray: notesArray.filter(notesArray => notesArray !== req.params.id)
-    // //     });
-    // }
-    // else {
-    //     res.json(`No note with id of ${req.params.id}`);
-    // }
-
-
-    
-    // let newNotesArray = notesArray.filter(item => item.id 
-    //     if (deleted) {
-    // }
-    // else {
-    //     res.json('Note you want to delete does not exisit')
-    // }
 });
 
 module.exports = notes;
