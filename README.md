@@ -4,6 +4,7 @@
 
 
 ## Deployed Application
+https://collection-of-notes.herokuapp.com/
 
 ## Table of Contents
 - [Installation Steps](#installation-steps)
