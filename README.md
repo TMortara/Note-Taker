@@ -29,7 +29,7 @@ Once Node.js has been installed, open the integrated terminal in VS Code and run
 
 <u>Installation Resources</u>:
  - [Node.js Documentation](https://nodejs.org/en/docs/)
- - [Express.js Documentation]([https://www.npmjs.com/package/inquirer#installation](https://expressjs.com/en/starter/installing.html))
+ - [Express.js Documentation](https://expressjs.com/en/starter/installing.html)
 
 ## Usage
 1. Click Get Started
